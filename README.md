@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+to create Frontend with React Typescript:
+-----------------------------------------
+npx create-react-app app_name --template typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+to start the APP:
+-----------------
+npm start
 
-In the project directory, you can run:
+to install packages (Material UI and the Data Grid):
+----------------------------------------------------
+npm install @material-ui/data-grid
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*in the src directory, create new folder called components and in it create new file called DataTable.js.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+/*
+In the DataTable.js file, we will use a functional component. In this functional component, we will implement some of the following default features in React:
 
-### `npm test`
+useState hook: helps us track state in a functional component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+useEffect hook: allows us to handle side effects in our functional component. 
 
-### `npm run build`
+The Fetch API: allows web browsers to make HTTP requests to web servers. The request can be of any APIs that send and receive data in JSON or XML format.
+*/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+use Mock.json file As API:
+**************************
+1) first import useState and useEffect hooks:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+import React, { useState, useEffect } from 'react'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2) create a variable using the useState hook:
 
-### `npm run eject`
+const [tableData, setTableData] = useState([])
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+public REST API called JSONPlaceholder
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3)Finally, to access our data we will use the useEffect hook and the Fetch API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To display our API results in the Material UI Data Grid,import the Data Grid package into our DataTable.js file:
+----------------------------------------------------------------------------------------------------------------
+import { DataGrid } from '@mui/x-data-grid'
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
